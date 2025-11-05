@@ -14,10 +14,10 @@ function Footer() {
             <nav>
                 <h6 className="footer-title text-white">Navigation</h6>
                     <ul>
-                        <li className='hover:text-sky-400 active:text-red-500 transition-all duration-100 pt-2'>HOME</li>
-                        <li className='hover:text-sky-400 active:text-red-500 transition-all duration-100 pt-2'>TV SHOW</li>
-                        <li className='hover:text-sky-400 active:text-red-500 transition-all duration-100 pt-2'>MOVIES</li>
-                        <li className='hover:text-sky-400 active:text-red-500 transition-all duration-100 pt-2'>NEW</li>
+                        <li className="link link-hover">HOME</li>
+                        <li className="link link-hover">TV SHOW</li>
+                        <li className="link link-hover">MOVIES</li>
+                        <li className="link link-hover">NEW</li>
                     </ul>
             </nav>
             <nav>

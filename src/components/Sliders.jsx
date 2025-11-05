@@ -10,20 +10,19 @@ import "swiper/css/navigation";
 import img1 from "../assets/banner.jpg";
 import img2 from "../assets/Wednesday.webp";
 import img3 from "../assets/squad.webp";
-import img4 from "../assets/banner2.jpg";
-import img5 from "../assets/movie.jpg";
+import img4 from "../assets/movie.jpg";
 
 
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img2, img3, img4,];
 
 function Slider() {
   return (
-    <div className="w-full max-w-screen mx-auto py-6">
+    <div className="w-full h-[90vh] relative ">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 3000, // প্রতি ৩ সেকেন্ডে অটো পরিবর্তন হবে
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -31,14 +30,14 @@ function Slider() {
         }}
         
         modules={[Autoplay, Pagination,]}
-        className=" shadow-lg"
+        className=" w-full h-full"
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
             <img
               src={img}
               alt={`slide-${index}`}
-              className="w-full h-100 lg:h-150"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
         ))}

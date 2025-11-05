@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 function Navbar() {
     const menu =(
@@ -12,7 +13,7 @@ function Navbar() {
     )
   return (
   <>
-  <div className="navbar shadow-md bg-black/40 backdrop-blur-md text-white fixed top-0 left-0 right-0 z-100">
+  <div className="navbar shadow-md bg-black/40 backdrop-blur-md fixed top-0 left-0 right-0 z-100 font-monts">
     <div className='w-11/12 mx-auto flex justify-between items-center min-w-[280px]'>
          <div className="navbar-start">
      <div className="dropdown">
@@ -26,7 +27,7 @@ function Navbar() {
         </ul>
     </div>
     <div className='flex gap-10 justify-between items-center'>
-         <p className=" text-2xl text-yellow-400">DRAMATIC</p>
+         <p className=" text-2xl text-yellow-400 font-grif">DRAMATIC</p>
          <div className="navbar-center hidden lg:flex">
             <ul className="flex gap-6 items-center">
                 {menu}

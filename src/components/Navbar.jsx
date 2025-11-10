@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 
-function Navbar() {
+function Navbar({searchText, SetSearchText}) {
     const menu =(
         <>
         <li className='hover:text-sky-400 active:text-red-500 transition-all duration-100'>HOME</li>
@@ -53,7 +53,10 @@ function Navbar() {
             <path d="m21 21-4.3-4.3"></path>
             </g>
         </svg>
-          <input type="search" required placeholder="Search" className='bg-transparent outline-none hidden md:block lg:block' />
+          <input type="search" required placeholder="Search" className='bg-transparent outline-none hidden md:block lg:block'
+          value={searchText}
+          onChange={(event)=>SetSearchText(event.target.value)}
+          />
          </label>
 
         <div className="avatar">

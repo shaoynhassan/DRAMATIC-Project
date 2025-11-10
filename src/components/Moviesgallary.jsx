@@ -15,7 +15,11 @@ function Moviesgallary() {
     useEffect (()=>{
         fetch("/Movies.json")
         .then(res => res.json())
-        .then(data=>setMovies(data))
+        .then(data=>{
+          setMovies(data);
+          setLoading(false);
+          toast.success("Data Successfully Loaded")
+        })
         .catch((error)=>{
             console.log("error");
             toast.error("Data Not Fatching")
@@ -25,7 +29,8 @@ function Moviesgallary() {
 
     const moviesCatagories =["ALL", ...new Set(movies.map(m=> m.category)) ];
     const filtermovies = selectCatagory==="ALL"? movies : movies.filter(m=>m.category === selectCatagory);
-    const visiblemovies = showAll? filtermovies : filtermovies.slice(0, 8)
+    const visiblemovies = showAll? filtermovies : filtermovies.slice(0, 8);
+
 
   return (
     <div>
@@ -38,7 +43,8 @@ function Moviesgallary() {
           loading ?
           (
             <div className='flex justify-center items-center  h-70'>
-              <span class="loading loading-dots loading-md text-yellow-400"></span>
+             <span className="loading loading-dots loading-md text-yellow-400"></span>
+
             </div>
           )
           :
@@ -55,6 +61,11 @@ function Moviesgallary() {
             }
 
           </div>
+          {
+            filtermovies.length===0 &&(
+              <p> No movies found</p>
+            )
+          }
 
           {
             filtermovies.length > 8 && (
@@ -73,11 +84,7 @@ function Moviesgallary() {
           (<p className='text-red-500 text-center'>No Movies Found</p>)
           
          }
-         <div>
-          <RattingMovie
-          movies={movies}
-          ></RattingMovie>
-         </div>
+        
 
     </div>
   )

@@ -8,7 +8,7 @@ function MoviesCard({movie}) {
   return (
     <div className='font-monts transition-transform  duration-300 hover:scale-110 p-10 '>
         <img src={movie.card_picture} alt={movie.title} 
-        className='h-60 mx-auto object-contain rounded-lg'
+        className='w-[80%] h-[80%] mx-auto object-contain rounded-lg'
         />
         <div>
             <div className='flex justify-between gap-6 items-center pt-6 space-y-2'>
